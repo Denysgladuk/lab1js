@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Практична робота_01-JS02</title>
+</head>
+<body>
+Сторінка привітання <br>
+"Hello WORLD"<br>
+<button id="toggleButton" value="Кнопка вітання">Привітати СВІТ</button>
+<script>
+    document.getElementById('toggleButton').onclick = toggleHeader;
+
+    function toggleHeader() {
+        var h1 = document.querySelector('h1');
+        if (h1) {
+            h1.remove();
+            this.textContent = "Кнопка вітання";
+        } else {
+            var newHeader = document.createElement('h1');
+            newHeader.appendChild(document.createTextNode("Я ВІТАЮ ТЕБЕ СВІТ!!!"));
+            newHeader.style.color = "red";
+            newHeader.style.fontSize = "4em";
+            newHeader.style.textAlign = "center";
+            document.body.appendChild(newHeader);
+            this.textContent = "Відновити";
+        }
+    }
+</script>
+</body>
+</html>
